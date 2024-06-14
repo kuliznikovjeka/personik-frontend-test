@@ -1,0 +1,253 @@
+.paper {
+	background-color: $white-color;
+	box-shadow:
+		0 1px 3px 0 rgba(0, 0, 0, 0.1),
+		0 1px 2px 0 rgba(0, 0, 0, 0.06);
+	width: 100%;
+	max-height: 576px;
+	max-width: 576px;
+	display: flex;
+	flex-direction: column;
+	border-radius: 16px;
+
+	&__header {
+		display: flex;
+		flex-wrap: wrap;
+		padding: 17px 16px;
+		justify-content: space-between;
+		gap: 15px 30px;
+	}
+
+	&__title {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		line-height: 150%;
+	}
+
+	&__timer {
+		font-weight: 500;
+		font-size: 20px;
+	}
+
+	&__progress-bar {
+		position: relative;
+		width: 100%;
+		height: 3px;
+		background-color: $grey-light-color;
+	}
+
+	&__progress-bar-inner {
+		height: 3px;
+		background-color: $purple-color;
+		transition:
+			width 1s linear,
+			background-color 1s linear;
+	}
+
+	&__content-layout {
+		padding: 24px;
+		flex: 1 1 100%;
+		@media (max-width: 480px) {
+			padding: 12px;
+		}
+	}
+
+	&__text {
+		color: $text-color;
+		line-height: 150%;
+		font-weight: 400;
+
+		&_big-black {
+			font-size: 20px;
+			color: $black-color;
+			text-align: center;
+
+			span {
+				font-weight: 500;
+			}
+
+			&:not(:last-child) {
+				margin-bottom: 32px;
+			}
+
+			@media (max-width: 480px) {
+				font-size: 16px;
+			}
+		}
+
+		&_light {
+			text-align: center;
+			color: $text-light-grey-color;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 24px;
+		}
+	}
+
+	&__last-named-city {
+		font-weight: 500;
+		color: $black-color;
+	}
+
+	&__list {
+		margin-bottom: 32px;
+	}
+
+	&__item {
+		color: $text-color;
+		line-height: 150%;
+
+		&::before {
+			content: "";
+			display: inline-block;
+			width: 4px;
+			height: 4px;
+			margin: 0 8px 4px 0px;
+			border-radius: 100%;
+			background: $text-color;
+		}
+	}
+
+	&__time {
+		font-size: 30px;
+		line-height: 150%;
+		font-weight: 500;
+		display: block;
+		text-align: center;
+
+		&:not(:last-child) {
+			margin-bottom: 24px;
+		}
+
+		&_fail {
+			color: $red-color;
+		}
+		&_win {
+			color: $green-color;
+		}
+	}
+
+	&__last-named-city {
+		display: block;
+		text-align: center;
+		font-size: 24px;
+		font-weight: 500;
+		color: $black-color;
+		line-height: 150%;
+	}
+
+	&__messages-area {
+		height: 300px;
+		display: flex;
+		flex-direction: column;
+		overflow-y: auto;
+		margin-bottom: 24px;
+		row-gap: 10px;
+		padding-right: 15px;
+
+		&::-webkit-scrollbar {
+			width: 5px;
+		}
+
+		&::-webkit-scrollbar-track {
+			background-color: $grey-dark-color;
+			border-radius: 8px;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background-color: $purple-color;
+			border-radius: 8px;
+		}
+	}
+
+	&__message {
+		padding: 6px 12px;
+
+		&_user {
+			width: fit-content;
+			align-self: flex-end;
+			background-color: $purple-color;
+			color: $white-color;
+			border-radius: 12px 12px 0px 12px;
+		}
+
+		&_opponent {
+			background-color: $light-violet-color;
+			border-radius: 12px 12px 12px 0px;
+			width: fit-content;
+		}
+	}
+
+	&__form {
+		position: relative;
+
+		width: 100%;
+	}
+
+	&__input {
+		background-color: $input-color;
+		padding: 8px;
+		height: 48px;
+		font-size: 16px;
+		width: 100%;
+		border-radius: 6px;
+		transition:
+			background-color,
+			color 0.3s ease 0s;
+
+		&:focus {
+			background-color: $input-focused-color;
+
+			&::placeholder {
+				color: $text-color;
+			}
+		}
+
+		&::placeholder {
+			color: $text-light-grey-color;
+			font-size: 16px;
+		}
+	}
+
+	&__button-message-sendler {
+		position: absolute;
+		right: 8px;
+		top: 50%;
+		transform: translateY(-50%);
+		padding: 6px;
+		border-radius: 6px;
+		background-color: $purple-color;
+		transition: background-color 0.3s ease 0s;
+
+		&_disabled {
+			background-color: $text-light-grey-color;
+		}
+	}
+
+	&__description {
+		height: 100%;
+		color: $text-light-grey-color;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__button {
+		padding: 8px 16px;
+		font-weight: 500;
+		font-size: 16px;
+		color: $white-color;
+		background-color: $purple-color;
+		transition: background-color 0.3s ease 0s;
+		border-radius: 4px;
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: $purple-hover-color;
+			}
+		}
+	}
+}
